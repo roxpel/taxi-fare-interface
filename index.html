@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NY Taxi Fare prediction interface</title>
+  <title>NYC Taxi Fare prediction interface</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
@@ -25,13 +25,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1 class="text-center p-2">NY taxi</h1>
-  </div>
+  <div id="main-container">
+    <h1 class="text-center p-2">NYC Taxi 🍎</h1>
 
-  <div class="position-relative">
-    <div class="position-absolute w-100" id="search">
-      <div class="container pt-4 d-flex justify-content-center">
+    <div id="map-container">
+      <!-- Search Bar (Inside the Map) -->
+      <div id="search">
         <form class="form-inline">
           <div class="mr-sm-2" id="pickup"></div>
           <input type="hidden" id="pickup_latitude" name="pickup_latitude">
@@ -53,20 +52,30 @@
           <button type="submit" class="btn btn-primary" id="get-fare-button">Get fare</button>
         </form>
       </div>
-    </div>
-    <div id='map' style='width: 100%; height: calc(100vh - 88px - 64px);'></div>
-    <div id="fare" class="position-absolute bg-primary p-4 d-none">
-      <p id="predicted-fare"></p>
-    </div>
-  </div>
 
-  <div class="footer d-flex align-items-center justify-content-end p-4">
-    <p>Made with ❤️ @
-      <a href="https://www.lewagon.com" target="_blank">
-        <img src="images/le-wagon-neg-color.png" alt="" width=100>
+      <!-- The Map -->
+      <div id="map"></div>
+
+      <!-- Fare Prediction -->
+      <div id="fare" class="position-absolute bg-primary p-4 d-none">
+        <p id="predicted-fare"></p>
+      </div>
+
+</div>
+
+<div id="map-container">
+  <div id="map"></div>
+
+<!-- Footer directly below the map -->
+<div id="footer-container">
+  <p>
+      <a href="https://github.com/roxpel" target="_blank" class="github-link">
+          Made with ❤️ by @roxpel
       </a>
-    </p>
-  </div>
+      <img src="https://github.com/roxpel.png" alt="GitHub Profile" class="github-avatar">
+  </p>
+</div>
+
   <!-- Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
