@@ -208,14 +208,19 @@ const predict = () => {
       })
       .then(response => response.json())
       .then(data => {
-        document.getElementById('fare').classList.remove('d-none');
-        const fareResult = document.getElementById('predicted-fare');
-        const fare = Math.round(data['fare'] * 100) / 100
-        fareResult.innerText = `$${fare}`;
+          if (!data || !data['fare']) { 
+              throw new Error("Invalid response from server");
+          }
+          document.getElementById('fare').classList.remove('d-none');
+          const fareResult = document.getElementById('predicted-fare');
+          const fare = Math.round(data['fare'] * 100) / 100;
+          fareResult.innerText = `$${fare}`;
       })
       .catch((error) => {
-        console.error('Error:', error);
+          console.error('Error:', error);
+          alert("Failed to fetch fare. Please try again.");
       });
+      
     });
   }
 };

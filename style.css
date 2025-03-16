@@ -75,7 +75,7 @@ body {
 }
 
 h1 {
-  margin-top: 70px;
+  margin-top: 10px;
 }
 
 .footer {
@@ -96,14 +96,14 @@ h1 {
   width: 100%; /* Same width as the map */
   background: rgba(255, 255, 255, 0.8); /* Light translucent background */
   padding: 8px 15px;
-  border-radius: 0 0 10px 10px; /* Rounds only the bottom corners */
+  border-radius: 0 0 10px 10px; /* Only bottom corners rounded */
   display: flex;
   justify-content: flex-end; /* Moves content all the way to the right */
   align-items: center;
   font-size: 14px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  position: relative; /* Ensures it does not overlap the map */
-  margin-top: -8px; /* Adjusts the positioning */
+  position: relative; /* Makes it stick directly under the map */
+  margin-top: 10px; /* Add margin to separate from map */
 }
 
 .github-link {
