@@ -3,8 +3,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85%;
-  max-width: 1100px;
+  width: 100%;
+  max-width: 1050px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@
   transform: translateX(-50%);
   width: 92%;
   background: rgba(255, 255, 255, 0.8);
-  padding: 10px 15px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -38,6 +38,13 @@
 
 #search button {
   margin-left: 10px;
+  white-space: nowrap; 
+}
+
+#search form {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent elements from wrapping */
+  align-items: center; /* Align vertically */
 }
 
 .algolia-places {
@@ -49,8 +56,17 @@
 }
 
 #fare {
-  bottom: 0px;
-  right: 0px;
+  position: absolute;
+  bottom: 100px; /* Moves it further up to sit just above the Mapbox footer */
+  right: 15px; /* Keeps it aligned neatly to the right */
+  background: #007bff;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10; /* Ensures it stays visible above the map */
 }
 
 #predicted-fare {
@@ -75,35 +91,45 @@ body {
 }
 
 h1 {
-  margin-top: 10px;
+  color: #333333; /* Dark gray for contrast */
+  font-family: 'Poppins', sans-serif; /* Clean & modern */
+  font-size: 38px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 25px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+  letter-spacing: 1.2px; /* Slightly spaced out */
+  padding: 10px 0;
 }
 
 .footer {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.8); /* Light translucent white */
-  padding: 10px 15px;
-  border-radius: 10px;
+  bottom: 12px; /* Move slightly up */
+  right: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px; /* Reduce padding to shrink height */
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  gap: 10px; /* Adds space between text & image */
-  font-size: 14px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  gap: 6px;
+  font-size: 12px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #footer-container {
-  width: 100%; /* Same width as the map */
-  background: rgba(255, 255, 255, 0.8); /* Light translucent background */
-  padding: 8px 15px;
-  border-radius: 0 0 10px 10px; /* Only bottom corners rounded */
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 4px 10px; /* Increase top padding to push text slightly down */
+  height: 40px; /* Keep the height balanced */
+  align-items: center; /* Ensures vertical alignment */
+  line-height: 45px; /* Moves text vertically in line */
+  border-radius: 0 0 10px 10px;
   display: flex;
-  justify-content: flex-end; /* Moves content all the way to the right */
-  align-items: center;
-  font-size: 14px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  position: relative; /* Makes it stick directly under the map */
-  margin-top: 10px; /* Add margin to separate from map */
+  justify-content: flex-end;
+  font-size: 13px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-top: 8px;
 }
 
 .github-link {
